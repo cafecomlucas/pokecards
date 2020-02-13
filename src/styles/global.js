@@ -1,4 +1,12 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, keyframes } from 'styled-components';
+
+const rotate = keyframes`
+  to {
+    transform: rotate(0deg)
+  }
+  from {
+    transform: rotate(-360deg)
+  }`;
 
 export default createGlobalStyle`
   * {
@@ -24,5 +32,9 @@ export default createGlobalStyle`
 
   button {
     cursor: pointer;
+  }
+
+  .spinner{
+    animation: ${rotate} 800ms linear infinite;
   }
 `;
