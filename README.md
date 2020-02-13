@@ -1,16 +1,20 @@
 ## PokeCards!
 
-Aplicação Front-End que lista e detalha cards Pokemons após consumir a API . Feita com ReactJS, Styled Components.
+Aplicação Front-End responsiva que lista e detalha cards Pokemons após consumir a API PokemonTCG. Feita com ReactJS, Styled Components e FlexBox.
+
+![Demonstração - Busca na API](.github/reactjs-pokemontcg-api-pokecards.gif)
+
+---
 
 ## Como iniciar
 
 ### Versão online
 
-Acesse o endereço [https://lucas-pokecards.netlify.com/](lucas-pokecards.netlify.com/)
+Acesse o endereço [lucas-pokecards.netlify.com/](https://lucas-pokecards.netlify.com/)
 
 ### Localmente
 
-Clone o repositório, acesse o diretório, instale a aplicação:
+Clone o repositório, acesse o diretório, instale as dependências e inicie a aplicação:
 
 ```bash
 git clone https://github.com/cafecomlucas/pokecards.git
@@ -19,6 +23,8 @@ yarn
 yarn start
 ```
 
+---
+
 ## Funcionalidades
 
 ### Página principal (Rota /)
@@ -26,13 +32,13 @@ yarn start
 Lista cards com:
 
 - Nome;
-- Id;
 - Tipo(s);
+- Id;
 - Imagem.
 
 ### Página do Card (Rota /cards/:id)
 
-Mostra os detalhes da carta:
+Mostra os detalhes da carta com:
 
 - Imagem em alta definição;
 - ID;
@@ -40,4 +46,4 @@ Mostra os detalhes da carta:
 - Tipo(s);
 - Resistencia(s);
 - Fraqueza(s);
-- Lista de ataques com: Custo de “mana”, Nome, Dano e Descrição.
+- Lista de ataques com: Nome, Dano, Descrição e Custo de “mana”.

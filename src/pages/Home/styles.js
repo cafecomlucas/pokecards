@@ -99,7 +99,7 @@ export const ContainerForm = styled.div`
 
 export const Section = styled.section`
   margin: 0 auto;
-  padding-top: 60px;
+  padding-top: 20px;
   max-width: 980px;
   min-width: 300px;
   ul {
