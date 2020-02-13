@@ -16,16 +16,16 @@ function Home() {
           id: card.id,
           src: card.imageUrl,
           name: card.name,
-          type: card.types && card.types[0],
+          types: card.types,
         };
       });
       newCards.sort(
         (a, b) => (a.name < b.name && -1) || (a.name > b.name && 1) || 0
       );
       setLoading(false);
-      setCardList([...cardList, ...newCards]);
+      setCardList(c => [...c, ...newCards]);
     });
-  }, []);
+  }, [setLoading, setCardList]);
 
   function onSubmitCard(e) {
     e.preventDefault();
@@ -35,12 +35,11 @@ function Home() {
       .where({ page: 1, pageSize: 100, name: cardName })
       .then(cards => {
         const newCards = cards.map(card => {
-          console.log(card.types);
           return {
             id: card.id,
             src: card.imageUrl,
             name: card.name,
-            type: card.types && card.types[0],
+            types: card.types,
           };
         });
         newCards.sort(
@@ -84,9 +83,12 @@ function Home() {
                     <strong>Nome:</strong> {card.name}
                   </div>
                 )}
-                {card.type && (
+                {card.types && (
                   <div className="type">
-                    <strong>Tipo:</strong> {card.type}
+                    <strong>Tipo(s):</strong>{' '}
+                    {card.types.map((item, i) => {
+                      return i <= 0 ? item : ` • ${item}`;
+                    })}
                   </div>
                 )}
                 {card.id && (
@@ -96,7 +98,9 @@ function Home() {
                 )}
               </div>
               <div className="imgContainer">
-                <img src={card.src} alt={card.name} />
+                <Link to={`/cards/${card.id}`}>
+                  <img src={card.src} alt={card.name} />
+                </Link>
               </div>
               <Link to={`/cards/${card.id}`}>Detalhes</Link>
             </li>

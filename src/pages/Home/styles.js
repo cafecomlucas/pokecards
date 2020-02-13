@@ -117,7 +117,7 @@ export const Section = styled.section`
       background: #f7f7f7;
       .infos {
         padding: 10px 0 20px 0;
-        min-height: 100px;
+        min-height: 120px;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -145,11 +145,19 @@ export const Section = styled.section`
         width: 100%;
         padding: 10px;
         min-height: 360px;
+        img {
+          transition: transform 0.3s ease-in-out;
+        }
+        a:hover {
+          img {
+            transform: scale(1.05);
+          }
+        }
       }
       img {
         width: 100%;
       }
-      a {
+      > a {
         text-decoration: none;
         font-size: 18px;
         display: block;
