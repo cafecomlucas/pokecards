@@ -10,7 +10,7 @@ Aplicação Front-End responsiva que lista e detalha cards Pokemons após consum
 
 ### Versão online
 
-Acesse o endereço [lucas-pokecards.netlify.com/](https://lucas-pokecards.netlify.com/)
+Acesse o endereço [lucas-pokecards.netlify.app/](https://lucas-pokecards.netlify.app/)
 
 ### Localmente
 
